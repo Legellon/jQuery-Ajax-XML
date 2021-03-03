@@ -42,7 +42,7 @@
                     console.log(xml.text);
                     console.log(xml.document);
                     console.log(xml.log);
-                    console.log($(xml));
+                    console.log($(xml).context.children);
 
                     $(xml).find('LOCATION').each(function() {
                         $('#tableBody').append(
