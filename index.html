@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Read XML Data Using jQuery Ajax and Load it in HTML table</title>
-    <!--Include Bootstrap CSS-->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
-      <!--Include jQuery-->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <style>
         
@@ -30,20 +30,18 @@
 
 <script>
     $(document).ready(function() {
-        //jQuery on button click Call
+
         $('#btn').click(function () {
 
-            $('#tableBody').empty();       // Clear the table body.
-            //ajax call to load XML and parse it
+            $('#tableBody').empty();
+
             $.ajax({
                 type: 'GET',
                 url: 'locations.xml',
                 dataType: 'xml',    
                 success: function(xml) {
-                   //find all book tags, loop them and append to table body
+
                     $(xml).find('LOCATION').each(function() {
-                        
-                        // Append new data to the tbody element.
                         $('#tableBody').append(
                             '<tr>' +
                                 '<td>' +
