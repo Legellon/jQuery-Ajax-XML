@@ -60,43 +60,20 @@
 
                         $('#tableBody').append(
                             '<tr>' +
-                                '<td>' +
+                                  '<td>' +
                                     location.children[tag.NAME].textContent + 
                                 '</td> ' +
-                                '<td>' +
+                                  '<td>' +
                                     location.children[tag.TYPE].textContent + 
                                 '</td> ' +
-                                '<td>' +
+                                  '<td>' +
                                     adress +
                                 '</td> ' +
-                                '<td>' +
+                                  '<td>' +
                                     location.children[tag.SERVICE_HOURS].textContent + 
                                 '</td> ' +
                             '</tr>');
                     }
-
-                    /*$(xml).find('LOCATION').each(function() {
-                        $('#tableBody').append(
-                            '<tr>' +
-                                '<td>' +
-                                    $(this).find('NAME').text() + 
-                                '</td> ' +
-                                '<td>' +
-                                    $(this).find('TYPE').text() + 
-                                '</td> ' +
-                                '<td>' +
-                                    $(this).find('A0_NAME').text() + ' ' + 
-                                    $(this).find('A1_NAME').text() + ' ' + 
-                                    $(this).find('A2_NAME').text() + ' ' + 
-                                    $(this).find('A3_NAME').text() + ' ' + 
-                                    $(this).find('A5_NAME').text() + ' ' + 
-                                    $(this).find('A7_NAME').text() + 
-                                '</td> ' +
-                                '<td>' +
-                                    $(this).find('SERVICE_HOURS').text() + 
-                                '</td> ' +
-                            '</tr>');
-                    });*/
                 }
             });
         });
