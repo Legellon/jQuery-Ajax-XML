@@ -48,6 +48,9 @@
                         let location = locations.children[i];
 
                         let adress = '';
+                        let name = location.children[tag.NAME].textContent;
+                        let type = location.children[tag.TYPE].textContent;
+                        let serv_h = location.children[tag.SERVICE_HOURS].textContent
                         
                         for(let j = tag.A0_NAME; j <= tag.A8_NAME; j += 1) {
 
@@ -60,18 +63,7 @@
 
                         $('#tableBody').append(
                             '<tr>' +
-                                  '<td>' +
-                                    location.children[tag.NAME].textContent + 
-                                '</td> ' +
-                                  '<td>' +
-                                    location.children[tag.TYPE].textContent + 
-                                '</td> ' +
-                                  '<td>' +
-                                    adress +
-                                '</td> ' +
-                                  '<td>' +
-                                    location.children[tag.SERVICE_HOURS].textContent + 
-                                '</td> ' +
+                                '<td>'+name+'</td> '+'<td>'+type+'</td> '+'<td>'+adress+'</td> '+'<td>'+serv_h+'</td> ' +
                             '</tr>');
                     }
                 }
