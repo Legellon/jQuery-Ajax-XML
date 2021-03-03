@@ -49,21 +49,21 @@
                         $('#tableBody').append(
                             '<tr>' +
                                 '<td>' +
-                                    $(location).find('NAME').text() + 
+                                    location.children[1].textContent + 
                                 '</td> ' +
                                 '<td>' +
-                                    $(location).find('TYPE').text() + 
+                                    location.children[2].textContent + 
                                 '</td> ' +
                                 '<td>' +
-                                    $(location).find('A0_NAME').text() + ' ' + 
-                                    $(location).find('A1_NAME').text() + ' ' + 
-                                    $(location).find('A2_NAME').text() + ' ' + 
-                                    $(location).find('A3_NAME').text() + ' ' + 
-                                    $(location).find('A5_NAME').text() + ' ' + 
-                                    $(location).find('A7_NAME').text() + 
+                                    location.children[3].textContent + ' ' + 
+                                    location.children[4].textContent + ' ' + 
+                                    location.children[5].textContent + ' ' + 
+                                    location.children[6].textContent + ' ' + 
+                                    location.children[8].textContent + ' ' + 
+                                    location.children[10].textContent + 
                                 '</td> ' +
                                 '<td>' +
-                                    $(location).find('SERVICE_HOURS').text() + 
+                                    location.children[14].textContent + 
                                 '</td> ' +
                             '</tr>');
                     }
