@@ -39,9 +39,15 @@
                 dataType: 'xml',    
                 success: function(xml) {
 
-                    console.log($(xml))
-                    let tag = {'NAME': 1, 'TYPE': 2, 'A0_NAME': 3, 'A8_NAME': 11, 'SERVICE_HOURS': 14};
+                    let tags = {};
                     let item = $(xml).context.children[0];
+
+                    for(let tag_id = 0; tag_id < item.firstElementChild.childElementCount; tag_id += 1) {
+                        tags[item.firstElementChild.children[tag_id].localName] = tag_id;
+                    }
+
+                    console.log($(xml));
+                    console.log(tags);
 
                     let tr = '';
 
@@ -50,16 +56,16 @@
                         let location = item.children[child];
 
                         let adress = '';
-                        let name = location.children[tag.NAME].textContent;
-                        let type = location.children[tag.TYPE].textContent;
-                        let serv_h = location.children[tag.SERVICE_HOURS].textContent
+                        let name = location.children[tags.NAME].textContent;
+                        let type = location.children[tags.TYPE].textContent;
+                        let serv_h = location.children[tags.SERVICE_HOURS].textContent
                         
-                        for(let adress_tag = tag.A0_NAME; adress_tag <= tag.A8_NAME; adress_tag += 1) {
+                        for(let adress_tags = tags.A0_NAME; adress_tags <= tags.A8_NAME; adress_tags += 1) {
 
-                            if(location.children[adress_tag].textContent != '') {
+                            if(location.children[adress_tags].textContent != '') {
 
-                                if(adress_tag != tag.A0_NAME) adress += ' ';
-                                adress += location.children[adress_tag].textContent;
+                                if(adress_tags != tags.A0_NAME) adress += ' ';
+                                adress += location.children[adress_tags].textContent;
                             }
                         }
 
