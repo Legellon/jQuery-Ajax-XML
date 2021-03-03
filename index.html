@@ -43,21 +43,21 @@
 
                     let item = $(xml).context.children[0];
 
-                    for(let i = 0; i < item.childElementCount; i += 1) {
+                    for(let child = 0; child < item.childElementCount; child += 1) {
 
-                        let location = item.children[i];
+                        let location = item.children[child];
 
                         let adress = '';
                         let name = location.children[tag.NAME].textContent;
                         let type = location.children[tag.TYPE].textContent;
                         let serv_h = location.children[tag.SERVICE_HOURS].textContent
                         
-                        for(let j = tag.A0_NAME; j <= tag.A8_NAME; j += 1) {
+                        for(let adress_tag = tag.A0_NAME; adress_tag <= tag.A8_NAME; adress_tag += 1) {
 
-                            if(location.children[j].textContent != '') {
+                            if(location.children[adress_tag].textContent != '') {
 
-                                if(j != tag.A0_NAME) adress += ' ';
-                                adress += location.children[j].textContent;
+                                if(adress_tag != tag.A0_NAME) adress += ' ';
+                                adress += location.children[adress_tag].textContent;
                             }
                         }
 
