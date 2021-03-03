@@ -43,6 +43,7 @@
                     let item = $(xml).context.children[0];
 
                     for(let tag_id = 0; tag_id < item.firstElementChild.childElementCount; tag_id += 1) {
+                        
                         tags[item.firstElementChild.children[tag_id].localName] = tag_id;
                     }
 
