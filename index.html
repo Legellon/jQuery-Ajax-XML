@@ -39,7 +39,7 @@
                 dataType: 'xml',    
                 success: function(xml) {
 
-                    const index = {'NAME': 1, 'TYPE': 2, 'A0_NAME': 3, 'A1_NAME': 4, 'A2_NAME': 5, 'A3_NAME': 6, 'A5_NAME': 8, 'A7_NAME': 10, 'SERVICE_HOURS': 14};
+                    const tag = {'NAME': 1, 'TYPE': 2, 'A0_NAME': 3, 'A1_NAME': 4, 'A2_NAME': 5, 'A3_NAME': 6, 'A5_NAME': 8, 'A7_NAME': 10, 'SERVICE_HOURS': 14};
 
                     var locations = $(xml).context.children[0];
 
@@ -49,21 +49,21 @@
                         $('#tableBody').append(
                             '<tr>' +
                                 '<td>' +
-                                    location.children[index['NAME']].textContent + 
+                                    location.children[tag['NAME']].textContent + 
                                 '</td> ' +
                                 '<td>' +
-                                    location.children[index['TYPE']].textContent + 
+                                    location.children[tag['TYPE']].textContent + 
                                 '</td> ' +
                                 '<td>' +
-                                    location.children[index['A0_NAME']].textContent + ' ' + 
-                                    location.children[index['A1_NAME']].textContent + ' ' + 
-                                    location.children[index['A2_NAME']].textContent + ' ' + 
-                                    location.children[index['A3_NAME']].textContent + ' ' + 
-                                    location.children[index['A5_NAME']].textContent + ' ' + 
-                                    location.children[index['A7_NAME']].textContent + 
+                                    location.children[tag['A0_NAME']].textContent + ' ' + 
+                                    location.children[tag['A1_NAME']].textContent + ' ' + 
+                                    location.children[tag['A2_NAME']].textContent + ' ' + 
+                                    location.children[tag['A3_NAME']].textContent + ' ' + 
+                                    location.children[tag['A5_NAME']].textContent + ' ' + 
+                                    location.children[tag['A7_NAME']].textContent + 
                                 '</td> ' +
                                 '<td>' +
-                                    location.children[index['SERVICE_HOURS']].textContent + 
+                                    location.children[tag['SERVICE_HOURS']].textContent + 
                                 '</td> ' +
                             '</tr>');
                     }
