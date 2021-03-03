@@ -43,13 +43,13 @@
 
                     let locations = $(xml).context.children[0];
 
-                    for(let i = 0; i < locations.childElementCount; i++) {
+                    for(let i = 0; i < locations.childElementCount; i += 1) {
 
                         let location = locations.children[i];
 
                         let adress = '';
                         
-                        for(let j = tag.A0_NAME; j <= tag.A8_NAME; j++) {
+                        for(let j = tag.A0_NAME; j <= tag.A8_NAME; j += 1) {
 
                             if(location.children[j].textContent != '') {
 
