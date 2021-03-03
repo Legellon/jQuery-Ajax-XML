@@ -43,6 +43,8 @@
                     let tag = {'NAME': 1, 'TYPE': 2, 'A0_NAME': 3, 'A8_NAME': 11, 'SERVICE_HOURS': 14};
                     let item = $(xml).context.children[0];
 
+                    let tr = '';
+
                     for(let child = 0; child < item.childElementCount; child += 1) {
 
                         let location = item.children[child];
@@ -61,11 +63,9 @@
                             }
                         }
 
-                        $('#tableBody').append(
-                            '<tr>' +
-                                '<td>'+name+'</td> '+'<td>'+type+'</td> '+'<td>'+adress+'</td> '+'<td>'+serv_h+'</td> ' +
-                            '</tr>');
+                        tr += '<tr>'+'<td>'+name+'</td> '+'<td>'+type+'</td> '+'<td>'+adress+'</td> '+'<td>'+serv_h+'</td> '+'</tr>';
                     }
+                    $('#tableBody').append(tr);
                 }
             });
         });
