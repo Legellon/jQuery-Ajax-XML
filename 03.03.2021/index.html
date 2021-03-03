@@ -41,25 +41,23 @@
             //ajax call to load XML and parse it
             $.ajax({
                 type: 'GET',
-                url: 'test_xml.xml',
+                url: 'locations.xml',
                 dataType: 'xml',    
                 success: function(xml) {
                    //find all book tags, loop them and append to table body
-                    $(xml).find('book').each(function() {
+                    $(xml).find('LOCATION').each(function() {
                         
                         // Append new data to the tbody element.
                         $('#tableBody').append(
                             '<tr>' +
                                 '<td>' +
-                                    $(this).find('author').text() + '</td> ' +
+                                    $(this).find('NAME').text() + '</td> ' +
                                 '<td>' +
-                                    $(this).find('title').text() + '</td> ' +
+                                    $(this).find('TYPE').text() + '</td> ' +
                                 '<td>' +
-                                    $(this).find('genre').text() + '</td> ' +
+                                    $(this).find('A0_NAME').text() + ' ' + $(this).find('A1_NAME').text() + ' ' + $(this).find('A2_NAME').text() + ' ' + $(this).find('A3_NAME').text() + ' ' + $(this).find('A5_NAME').text() + ' ' + $(this).find('A7_NAME').text() + '</td> ' +
                                     '<td>' +
-                                    $(this).find('price').text() + '</td> ' +
-                                    '<td>' +
-                                    $(this).find('description').text() + '</td> ' +
+                                    $(this).find('SERVICE_HOURS').text() + '</td> ' +
                             '</tr>');
                     });
                 }
